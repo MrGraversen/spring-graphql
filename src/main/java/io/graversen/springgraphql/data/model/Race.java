@@ -1,13 +1,17 @@
 package io.graversen.springgraphql.data.model;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Set;
 
 @Data
+@RequiredArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Race
 {
