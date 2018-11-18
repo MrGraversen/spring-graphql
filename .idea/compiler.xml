@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="spring-graphql" target="11" />
+      <module name="spring-graphql" target="10" />
     </bytecodeTargetLevel>
   </component>
 </project>
