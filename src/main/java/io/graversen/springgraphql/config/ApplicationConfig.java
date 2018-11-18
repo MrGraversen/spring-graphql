@@ -1,5 +1,8 @@
 package io.graversen.springgraphql.config;
 
+import graphql.Scalars;
+import graphql.schema.GraphQLObjectType;
+import graphql.schema.GraphQLSchema;
 import io.graversen.springgraphql.data.model.Car;
 import io.graversen.springgraphql.data.model.Driver;
 import io.graversen.springgraphql.data.repository.ICarRepository;
@@ -9,13 +12,14 @@ import io.graversen.springgraphql.etc.Level;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.stream.Stream;
 
 @Configuration
-@ComponentScan(basePackages = {"io.graversen.springgraphql.controller", "io.graversen.springgraphql.data", "io.graversen.springgraphql.lib"})
+@ComponentScan(basePackages = {"io.graversen.springgraphql.controller", "io.graversen.springgraphql.data", "io.graversen.springgraphql.lib", "io.graversen.springgraphql.graphql"})
 public class ApplicationConfig implements ApplicationListener<ApplicationReadyEvent>
 {
     private final ICarRepository carRepository;
