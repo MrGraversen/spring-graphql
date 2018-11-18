@@ -1,6 +1,7 @@
 package io.graversen.springgraphql.data.model;
 
 import lombok.Data;
+import lombok.NonNull;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -19,15 +20,25 @@ public class Race
 
     @ManyToMany
     @JoinTable
+    @NonNull
     private Set<Car> cars;
 
     @ManyToMany
     @JoinTable
+    @NonNull
     private Set<Driver> drivers;
 
     @ManyToOne
+    @NonNull
     private Car winnerCar;
 
     @ManyToOne
+    @NonNull
     private Driver winnerDriver;
+
+    @PrePersist
+    void prePersist()
+    {
+        this.racedAt = LocalDate.now();
+    }
 }
