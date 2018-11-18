@@ -1,9 +1,11 @@
 package io.graversen.springgraphql.config;
 
 import io.graversen.springgraphql.data.model.Car;
+import io.graversen.springgraphql.data.model.Driver;
 import io.graversen.springgraphql.data.repository.ICarRepository;
 import io.graversen.springgraphql.data.repository.IDriverRepository;
 import io.graversen.springgraphql.data.repository.IRaceRepository;
+import io.graversen.springgraphql.etc.Level;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
@@ -46,5 +48,10 @@ public class ApplicationConfig implements ApplicationListener<ApplicationReadyEv
                 new Car("Volkswagen", "Polo GTI", 2018),
                 new Car("Volkswagen", "Golf GTI", 2016)
         ).forEach(carRepository::save);
+
+        Stream.of(
+                new Driver("Martin", 26, Level.PRO),
+                new Driver("Steffen", 24, Level.NOOB)
+        ).forEach(driverRepository::save);
     }
 }
