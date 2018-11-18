@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = {"io.graversen.springgraphql.controllers", "io.graversen.springgraphql.data", "io.graversen.springgraphql.lib"})
+@ComponentScan(basePackages = {"io.graversen.springgraphql.controller", "io.graversen.springgraphql.data", "io.graversen.springgraphql.lib"})
 public class ApplicationConfig implements ApplicationListener<ApplicationReadyEvent>
 {
     @Override
