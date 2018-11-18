@@ -22,6 +22,7 @@ public class GraphQLSchemas
     public GraphQLSchema graphQLSchema()
     {
         return new GraphQLSchemaGenerator()
+                .withBasePackages("io.graversen.springgraphql")
                 .withOperationsFromSingleton(carService)
                 .generate();
     }
